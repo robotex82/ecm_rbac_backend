@@ -1,0 +1,18 @@
+
+de:
+  classes:
+    ecm/rbac/backend/engine: Authorisierung
+    scopes:
+      never_signed_in: Niemals angemeldet
+  ecm:
+    rbac:
+      backend:
+        roles:
+          show_extras:
+            show: 'Anzeigen'
+        users:
+          show_extras:
+            show: 'Anzeigen'
+  routes:
+    mount:
+      ecm_user_area_backend: '/backend/authorisierung'
