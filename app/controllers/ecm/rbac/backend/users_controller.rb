@@ -9,7 +9,7 @@ module Ecm
         private
 
         def permitted_params
-          params.require(:user).permit()
+          params.require(:user).permit(role_ids: [])
         end
       end
     end

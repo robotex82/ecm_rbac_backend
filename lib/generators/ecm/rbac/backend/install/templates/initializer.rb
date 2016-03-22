@@ -1,9 +1,11 @@
 Ecm::Rbac::Backend.configure do |config|
   # Set the resources, that will be shown in the backend menu.
   #
-  # Default: config.registered_controllers = -> {[
-  #            Ecm::Rbac::Backend::RolesController
-  #          ]}
+  # Default: config.registered_controllers = lambda {
+  #            [
+  #              Ecm::Rbac::Backend::RolesController
+  #            ]
+  #          }
   #
   config.registered_controllers = lambda {
     [
@@ -15,7 +17,15 @@ Ecm::Rbac::Backend.configure do |config|
 
   # Set the services, that will be shown in the backend menu.
   #
-  # Default: config.registered_services = -> {[]}
+  # Default: config.registered_services = lambda {
+  #            [
+  #              Ecm::Rbac::Backend::ImportDefaultPermissionsServiceController
+  #            ]
+  #          }
   #
-  config.registered_services = -> { [] }
+  config.registered_services = lambda {
+    [
+      Ecm::Rbac::Backend::ImportDefaultPermissionsServiceController
+    ]
+  }
 end

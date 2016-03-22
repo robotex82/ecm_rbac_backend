@@ -1,6 +1,5 @@
-= table.column :id
-= table.column :email
-= table.column :active
-= table.column :confirmed
-= table.column :approved
-= table.timestamps
+.well
+  %h4= form.object.email
+
+.well
+  = form.association :roles, as: :check_boxes, label_method: :identifier

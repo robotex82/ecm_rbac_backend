@@ -1,7 +1,7 @@
 
 de:
   classes:
-    ecm/rbac/backend/engine: Authorisierung
+    ecm/rbac/backend/engine: "Authorisierung"
     scopes:
       never_signed_in: Niemals angemeldet
   ecm:
@@ -13,6 +13,10 @@ de:
         users:
           show_extras:
             show: 'Anzeigen'
+  pundit:
+    not_authorized:
+      index: "Sie sind nicht berechtigt %{collection_name} aufzulisten"
+      new: "Sie sind nicht berechtigt %{collection_name} hinzuzufügen"
   routes:
     mount:
       ecm_user_area_backend: '/backend/authorisierung'
