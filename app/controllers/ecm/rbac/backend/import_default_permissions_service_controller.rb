@@ -22,11 +22,14 @@ module Ecm::Rbac
       end
 
       def load_filenames
-        ::Rails::Engine.subclasses.map(&:instance).collect do |engine|
+        filenames = ::Rails::Engine.subclasses.map(&:instance).collect do |engine|
           filename = engine.root.join *%w(config rbac.yml)
           next unless File.readable? filename
           filename
         end.compact
+        application_filename = Rails.root.join *%w(config rbac.yml)
+        filenames << application_filename if File.readable? application_filename#
+        filenames
       end
     end
   end
