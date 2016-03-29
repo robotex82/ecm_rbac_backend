@@ -1,4 +1,3 @@
-
 de:
   classes:
     ecm/rbac/backend/engine: "Authorisierung"
@@ -19,4 +18,4 @@ de:
       new: "Sie sind nicht berechtigt %{collection_name} hinzuzufügen"
   routes:
     mount:
-      ecm_user_area_backend: '/backend/authorisierung'
+      ecm_rbac_backend: '/backend/authorization'
