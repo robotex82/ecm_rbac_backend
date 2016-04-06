@@ -16,6 +16,7 @@ de:
     not_authorized:
       index: "Sie sind nicht berechtigt %{collection_name} aufzulisten"
       new: "Sie sind nicht berechtigt %{collection_name} hinzuzufügen"
+      show: "Sie sind nicht berechtigt die Resource %{resource_name} anzuzeigen"
   routes:
     mount:
       ecm_rbac_backend: '/backend/authorization'
