@@ -6,6 +6,9 @@ en:
   ecm:
     rbac:
       backend:
+        permissions:
+          show_extras:
+            show: 'Show'
         roles:
           show_extras:
             show: 'Show'
