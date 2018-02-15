@@ -20,5 +20,4 @@ en:
       index: "You are not allowed to list %{collection_name}"
       new: "You are not allowed to add %{collection_name}"
   routes:
-    mount:
-      ecm_rbac_backend: '/backend/authorization'
+    ecm-rbac-backend-engine: 'authorization'

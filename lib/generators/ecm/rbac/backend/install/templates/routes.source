@@ -1,4 +1,4 @@
 
   localized do
-    mount Ecm::Rbac::Backend::Engine => '/backend/ecm/rbac'
+    mount Ecm::Rbac::Backend::Engine, at: '/backend/ecm/rbac'
   end
