@@ -1,18 +1,10 @@
 module Ecm::Rbac
   module Backend
     class ImportDefaultPermissionsServiceController < Itsf::Backend::Service::BaseController
+      before_action :load_filenames, only: [:new, :create]
+
       def self.service_class
         Ecm::Rbac::ImportDefaultPermissionsService
-      end
-
-      def invoke
-        @filenames = load_filenames
-        super
-      end
-
-      def call
-        @filenames = load_filenames
-        super
       end
 
       private
@@ -22,14 +14,17 @@ module Ecm::Rbac
       end
 
       def load_filenames
-        filenames = ::Rails::Engine.subclasses.map(&:instance).collect do |engine|
+        @filenames = ::Rails::Engine.subclasses.map(&:instance).collect do |engine|
           filename = engine.root.join *%w(config rbac.yml)
           next unless File.readable? filename
           filename
         end.compact
-        application_filename = Rails.root.join *%w(config rbac.yml)
-        filenames << application_filename if File.readable? application_filename#
-        filenames
+
+        @filenames << application_filename if File.readable? application_filename
+      end
+
+      def application_filename
+        Rails.root.join *%w(config rbac.yml)
       end
     end
   end

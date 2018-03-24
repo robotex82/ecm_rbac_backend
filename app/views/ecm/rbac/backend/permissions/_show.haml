@@ -1,5 +1,5 @@
 = table.row :identifier
-= table.row :enabled_from
-= table.row :enabled_to
-= table.row :created_at
-= table.row :updated_at
+= table.boolean :enabled?
+= table.timestamp :enabled_from
+= table.timestamp :enabled_to
+= table.timestamps

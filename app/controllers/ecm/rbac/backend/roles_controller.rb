@@ -2,6 +2,8 @@ module Ecm
   module Rbac
     module Backend
       class RolesController < Itsf::Backend::Resource::BaseController
+        include ResourcesController::Sorting
+
         def self.resource_class
           Ecm::Rbac::Role
         end

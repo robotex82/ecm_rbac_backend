@@ -2,6 +2,8 @@ module Ecm
   module Rbac
     module Backend
       class UsersController < Itsf::Backend::Resource::BaseController
+        include ResourcesController::Sorting
+
         def self.resource_class
           Ecm::Rbac::Configuration.user_class
         end
