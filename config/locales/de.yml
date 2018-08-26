@@ -21,4 +21,4 @@ de:
       new: "Sie sind nicht berechtigt %{collection_name} hinzuzufügen"
       show: "Sie sind nicht berechtigt die Resource %{resource_name} anzuzeigen"
   routes:
-    ecm-rbac-backend-engine: 'rollen'
+    ecm-rbac-backend-engine: 'berechtigungen'
