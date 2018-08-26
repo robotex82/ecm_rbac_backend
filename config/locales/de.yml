@@ -1,6 +1,6 @@
 de:
   classes:
-    ecm/rbac/backend/engine: "Authorisierung"
+    ecm/rbac/backend/engine: "Berechtigungen"
     scopes:
       never_signed_in: Niemals angemeldet
   ecm:
